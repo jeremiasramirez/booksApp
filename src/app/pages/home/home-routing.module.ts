@@ -16,7 +16,16 @@ const routes: Routes = [
       {
         path: 'search', 
         loadChildren: ()=> import('../search/search.module').then((e)=>e.SearchPageModule)
-      } 
+      },
+      {
+        path: 'explore', 
+        loadChildren: ()=> import('../explore/explore.module').then((e)=>e.ExplorePageModule)
+      },
+      {
+        path: 'explore/:id', 
+        loadChildren: ()=> import('../exploreshow/exploreshow.module').then((e)=>e.ExploreshowPageModule)
+      }  
+
     ]
   },
   {

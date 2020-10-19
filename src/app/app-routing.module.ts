@@ -15,6 +15,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home/books',
     pathMatch: 'full'
+  },
+  {
+    path: 'explore',
+    loadChildren: () => import('./pages/explore/explore.module').then( m => m.ExplorePageModule)
+  },
+  {
+    path: 'exploreshow',
+    loadChildren: () => import('./pages/exploreshow/exploreshow.module').then( m => m.ExploreshowPageModule)
   }
 ];
 

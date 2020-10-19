@@ -18,11 +18,15 @@ export class BookService{
         console.log("run service book!!");
     }
 
+    getByList():Observable<any>{
+        return ajax.get(this.URIS.lists).pipe(pluck("response"),delay(2500))
+    }  
+
     getFictionBooks():Observable<any>{
-        return ajax.get(this.URIS.fiction).pipe(pluck("response"),delay(1000))
+        return ajax.get(this.URIS.fiction).pipe(pluck("response"),delay(2500))
     }
  
     getNoFictionBooks():Observable<any>{
-        return ajax.get(this.URIS.nofiction).pipe(pluck("response"),delay(1000))
+        return ajax.get(this.URIS.nofiction).pipe(pluck("response"),delay(2500))
     }
 }

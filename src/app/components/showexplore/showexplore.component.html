@@ -1,0 +1,7 @@
+<ion-list>
+    
+  <ion-item class="animateIn" *ngFor="let explore of elements" [routerLink]="explore.list_name_encoded" detail>
+    <ion-label>{{ explore.display_name }}</ion-label>
+  </ion-item>
+
+</ion-list>

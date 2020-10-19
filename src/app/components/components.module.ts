@@ -1,6 +1,8 @@
 import { NgModule} from "@angular/core"
 import { CommonModule} from "@angular/common"
 import { BookComponent } from './book/book.component'
+import { ShowexploreComponent } from './showexplore/showexplore.component'
+import { SkeletonexploreComponent } from './skeletonexplore/skeletonexplore.component'
 
 
 @NgModule({
@@ -8,10 +10,14 @@ import { BookComponent } from './book/book.component'
         CommonModule
     ],
     declarations: [
-        BookComponent
+        BookComponent,
+        ShowexploreComponent,
+        SkeletonexploreComponent
     ],
     exports: [
-        BookComponent
+        BookComponent,
+        ShowexploreComponent,
+        SkeletonexploreComponent
     ]
 })
 
