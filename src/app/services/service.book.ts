@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core"
 import { Observable } from 'rxjs';
 import { ajax} from "rxjs/ajax"
-import {pluck} from "rxjs/operators"
+import {delay, pluck} from "rxjs/operators"
 @Injectable()
 
 export class BookService{
@@ -19,6 +19,10 @@ export class BookService{
     }
 
     getFictionBooks():Observable<any>{
-        return ajax.get(this.URIS.fiction).pipe(pluck("response"))
+        return ajax.get(this.URIS.fiction).pipe(pluck("response"),delay(1000))
+    }
+ 
+    getNoFictionBooks():Observable<any>{
+        return ajax.get(this.URIS.nofiction).pipe(pluck("response"),delay(1000))
     }
 }

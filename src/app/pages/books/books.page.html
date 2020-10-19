@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>books</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+ 
 <ion-content>
+
+  <section class="titleCategories">
+    <h4>Fiction</h4>
+  </section>
+  <app-book start="0" end="8" [elements]="books"></app-book>
+  <app-book start="8" end="16" [elements]="books"></app-book>
+
+  <section class="titleCategories">
+    <h4>No fiction</h4>
+  </section>
+  <app-book start="0" end="8" [elements]="noFictionBooks"></app-book>
+  <app-book start="8" end="16" [elements]="noFictionBooks"></app-book>
+ 
 
 </ion-content>
