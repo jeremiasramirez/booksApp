@@ -5,16 +5,17 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./pages/books/books.module').then( m => m.BooksPageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'home/books',
     pathMatch: 'full'
-  },
-  {
-    path: 'search',
-    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
-  },
+  }
 ];
 
 @NgModule({
