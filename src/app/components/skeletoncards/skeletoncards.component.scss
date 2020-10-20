@@ -1,0 +1,12 @@
+.skeleton__card{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .skeleton__card ion-card{
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
+  }

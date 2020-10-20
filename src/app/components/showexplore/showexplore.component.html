@@ -10,6 +10,6 @@
 
 <app-skeletonexplore *ngIf="elements.length < 1"></app-skeletonexplore>
 
-<ion-infinite-scroll threshold="130px" (ionInfinite)="more($event)">
-  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+<ion-infinite-scroll color="tertiary" threshold="130px" (ionInfinite)="more($event)">
+  <ion-infinite-scroll-content color="tertiary"></ion-infinite-scroll-content>
 </ion-infinite-scroll>

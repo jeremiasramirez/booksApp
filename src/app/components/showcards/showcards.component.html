@@ -1,10 +1,14 @@
 
+<app-skeletoncards *ngIf="elements.length<1"></app-skeletoncards>
+
 <section class="grid__cards" *ngIf="elements.length>1">
-  <ion-card mode="ios" *ngFor="let card of elements">
+  <ion-card class="animateIn" mode="ios" *ngFor="let card of elements|slice:0:end">
     <ion-img [src]="card.book_image"></ion-img>
   </ion-card>
 </section> 
 
- 
+  
 
- 
+<ion-infinite-scroll color="tertiary" threshold="130px" (ionInfinite)="more($event)">
+  <ion-infinite-scroll-content color="tertiary"></ion-infinite-scroll-content>
+</ion-infinite-scroll>

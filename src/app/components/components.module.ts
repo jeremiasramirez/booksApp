@@ -4,6 +4,7 @@ import { BookComponent } from './book/book.component'
 import { ShowexploreComponent } from './showexplore/showexplore.component'
 import { SkeletonexploreComponent } from './skeletonexplore/skeletonexplore.component'
 import { ShowcardsComponent } from './showcards/showcards.component'
+import { SkeletoncardsComponent } from './skeletoncards/skeletoncards.component'
 
 
 @NgModule({
@@ -14,13 +15,15 @@ import { ShowcardsComponent } from './showcards/showcards.component'
         BookComponent,
         ShowexploreComponent,
         SkeletonexploreComponent,
-        ShowcardsComponent
+        ShowcardsComponent,
+        SkeletoncardsComponent
     ],
     exports: [
         BookComponent,
         ShowexploreComponent,
         SkeletonexploreComponent,
-        ShowcardsComponent
+        ShowcardsComponent,
+        SkeletoncardsComponent
     ]
 })
 
