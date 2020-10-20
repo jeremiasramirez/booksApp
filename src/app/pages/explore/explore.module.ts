@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ExplorePageRoutingModule } from './explore-routing.module';
 
 import { ExplorePage } from './explore.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     ExplorePageRoutingModule
   ],
   declarations: [ExplorePage]
