@@ -1,0 +1,11 @@
+
+
+
+.grid__cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+.grid__cards  ion-card{
+    width: 125px;
+}

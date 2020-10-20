@@ -15,23 +15,25 @@ export class BookService{
     
     constructor(){
         console.log("run service book!!");
+        
     }
 
     getByList():Observable<any>{
-        return ajax.get(this.URIS.lists).pipe(pluck("response"),delay(2500))
+        return ajax.get(this.URIS.lists).pipe(pluck("response"),delay(1000))
     }  
-
+ 
+    
     getAllLists(id:any):Observable<any>{
         
-        return ajax.get(`https://api.nytimes.com/svc/books/v3/lists/current/${id}.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6`).pipe(pluck("response"),delay(2500))
+        return ajax.get(`https://api.nytimes.com/svc/books/v3/lists/current/${id}.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6`).pipe(pluck("response"),delay(1000))
     }  
 
 
     getFictionBooks():Observable<any>{
-        return ajax.get(this.URIS.fiction).pipe(pluck("response"),delay(2500))
+        return ajax.get(this.URIS.fiction).pipe(pluck("response"),delay(2000))
     }
  
     getNoFictionBooks():Observable<any>{
-        return ajax.get(this.URIS.nofiction).pipe(pluck("response"),delay(2500))
+        return ajax.get(this.URIS.nofiction).pipe(pluck("response"),delay(2000))
     }
 }

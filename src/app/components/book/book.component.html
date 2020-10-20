@@ -1,6 +1,6 @@
-<ion-slides *ngIf="elements.length>2" class="animateIn" [options]="opts" style="height: 200px !important;">
+<ion-slides  *ngIf="elements.length>2" class="animateIn" [options]="opts" style="height: 200px !important;">
     
-  <ion-slide *ngFor="let book of elements | slice:start:end"> 
+  <ion-slide  *ngFor="let book of elements | slice:start:end"> 
     <ion-card mode="ios">
 
       <ion-img [src]="book.book_image"></ion-img>
@@ -15,7 +15,7 @@
     
   <ion-slide *ngFor="let book of [1,1,1]"> 
     <ion-card mode="ios">
-      <ion-spinner style="margin-top: 60%" color="danger"></ion-spinner>
+      <ion-spinner name="lines" style="margin-top: 60%" color="danger"></ion-spinner>
     </ion-card>
   </ion-slide>
  

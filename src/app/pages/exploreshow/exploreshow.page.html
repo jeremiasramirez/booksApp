@@ -1,9 +1,8 @@
 <ion-header class="ion-no-border">
   <ion-toolbar mode="ios">
     <ion-buttons>
-      <ion-button routerLink="/home/explore">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </ion-button>
+      <ion-back-button defaultHref="/home/explore"></ion-back-button>
+      
     </ion-buttons>
 
     <ion-title>{{ title }}</ion-title>
@@ -11,5 +10,6 @@
 </ion-header>
 
 <ion-content>
-
+  
+  <app-showcards [elements]="allList"></app-showcards>
 </ion-content>

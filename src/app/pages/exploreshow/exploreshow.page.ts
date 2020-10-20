@@ -13,12 +13,14 @@ import { BookService } from 'src/app/services/service.book';
 export class ExploreshowPage implements OnInit {
   private allList :any[] = [];
   private title:string = "Waiting.." 
-  
+
   constructor(
     private param:ActivatedRoute,
     private servicebook:BookService) { }
 
   ngOnInit() {
+
+    //get parameter
     this.getParam();
   }
 

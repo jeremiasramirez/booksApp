@@ -1,4 +1,4 @@
-<ion-list mode="ios">
+<ion-list mode="ios" *ngIf="elements.length > 1">
     
   <ion-item class="animateIn" *ngFor="let explore of elements|slice:start:end" (click)="navigateTo(explore.list_name_encoded)" detail>
     <ion-label>{{ explore.display_name }}
@@ -7,6 +7,8 @@
   </ion-item>
 
 </ion-list>
+
+<app-skeletonexplore *ngIf="elements.length < 1"></app-skeletonexplore>
 
 <ion-infinite-scroll threshold="130px" (ionInfinite)="more($event)">
   <ion-infinite-scroll-content></ion-infinite-scroll-content>
