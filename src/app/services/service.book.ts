@@ -12,10 +12,11 @@ export class BookService{
         fiction: 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6',
         nofiction: 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6',
         history: 'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6',
-        lists: 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6'
+        lists: 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6',
+        foryou:'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?title&api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6'
     };
     
-    constructor(private modalBook:ModalController){ }
+    constructor(private modalBook:ModalController){}
 
     async openToBook(data:any) : Promise<any>{
         const bookmodal = await this.modalBook.create({
@@ -41,5 +42,9 @@ export class BookService{
  
     getNoFictionBooks():Observable<any>{
         return ajax.get(this.URIS.nofiction).pipe(pluck("response"),delay(2000))
+    }
+    
+    forYou():Observable<any>{
+        return ajax.get(this.URIS.foryou).pipe(pluck("response"),delay(2000))
     }
 }

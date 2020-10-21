@@ -14,10 +14,6 @@ const routes: Routes = [
         loadChildren: ()=> import('../books/books.module').then((e)=>e.BooksPageModule)
       },
       {
-        path: 'search', 
-        loadChildren: ()=> import('../search/search.module').then((e)=>e.SearchPageModule)
-      },
-      {
         path: 'explore', 
         loadChildren: ()=> import('../explore/explore.module').then((e)=>e.ExplorePageModule)
       },

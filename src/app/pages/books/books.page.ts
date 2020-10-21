@@ -11,16 +11,17 @@ import { BookService } from 'src/app/services/service.book';
 export class BooksPage implements OnInit {
   private books: any[]= [];
   private noFictionBooks :any[] = [];
- 
+  private foryouBooks :any[] = [];
+
   constructor(private serviceBook:BookService) { }
 
   ngOnInit() {
-
     this.getFiction();
     this.getNoFiction();
- 
+    
   }
   
+ 
 
   private getFiction() : void{
     this.serviceBook.getFictionBooks().subscribe((resp)=>{
