@@ -2,7 +2,7 @@
 <app-skeletoncards *ngIf="elements.length<1"></app-skeletoncards>
 
 <section class="grid__cards" *ngIf="elements.length>1">
-  <ion-card class="animateIn" mode="ios" *ngFor="let card of elements|slice:0:end">
+  <ion-card class="animateIn" mode="ios" *ngFor="let card of elements|slice:0:end" (click)="watch(card)">
     <ion-img [src]="card.book_image"></ion-img>
   </ion-card>
 </section> 
