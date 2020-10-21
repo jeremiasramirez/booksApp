@@ -1,7 +1,9 @@
 import {Injectable} from "@angular/core"
+import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { ajax} from "rxjs/ajax"
 import {delay, pluck} from "rxjs/operators"
+import { ShowbookComponent } from '../components/showbook/showbook.component';
 @Injectable()
 
 export class BookService{
@@ -13,11 +15,15 @@ export class BookService{
         lists: 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=sdhSG0pykGfZapSGRETrFICnu7GMWYY6'
     };
     
-    constructor(){
-        console.log("run service book!!");
-        
-    }
+    constructor(private modalBook:ModalController){ }
 
+    async openToBook(data:any) : Promise<any>{
+        const bookmodal = await this.modalBook.create({
+            component: ShowbookComponent,
+            componentProps: {data}
+        })
+        bookmodal.present()
+    }
     getByList():Observable<any>{
         return ajax.get(this.URIS.lists).pipe(pluck("response"),delay(1000))
     }  

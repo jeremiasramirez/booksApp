@@ -1,7 +1,7 @@
 <ion-slides  *ngIf="elements.length>2" class="animateIn" [options]="opts" style="height: 200px !important;">
     
   <ion-slide  *ngFor="let book of elements | slice:start:end"> 
-    <ion-card mode="ios">
+    <ion-card mode="ios" (click)="watch(book)">
 
       <ion-img [src]="book.book_image"></ion-img>
       

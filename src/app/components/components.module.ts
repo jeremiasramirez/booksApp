@@ -5,6 +5,7 @@ import { ShowexploreComponent } from './showexplore/showexplore.component'
 import { SkeletonexploreComponent } from './skeletonexplore/skeletonexplore.component'
 import { ShowcardsComponent } from './showcards/showcards.component'
 import { SkeletoncardsComponent } from './skeletoncards/skeletoncards.component'
+import { ShowbookComponent } from './showbook/showbook.component'
 
 
 @NgModule({
@@ -16,14 +17,16 @@ import { SkeletoncardsComponent } from './skeletoncards/skeletoncards.component'
         ShowexploreComponent,
         SkeletonexploreComponent,
         ShowcardsComponent,
-        SkeletoncardsComponent
+        SkeletoncardsComponent,
+        ShowbookComponent
     ],
     exports: [
         BookComponent,
         ShowexploreComponent,
         SkeletonexploreComponent,
         ShowcardsComponent,
-        SkeletoncardsComponent
+        SkeletoncardsComponent,
+        ShowbookComponent
     ]
 })
 
