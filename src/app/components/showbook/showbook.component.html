@@ -1,3 +1,74 @@
-<p>
-  showbook works!
-</p>
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-title class="animateIn"> {{ data.title }}</ion-title>
+
+    <ion-buttons mode="md" slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section class="toolbarBook">
+
+    <article class="containerPoster animateIn" >
+      <ion-img [src]="data.book_image"></ion-img>
+    </article>
+  
+  
+    <article class="containerDescription">
+      <p>{{ data.description }}</p>
+    </article>
+  </section>
+
+  
+
+  <ion-list>
+    <ion-item>
+      <ion-icon slot="start" name="thumbs-up-outline"></ion-icon>
+      <ion-label>Rank</ion-label>
+      <ion-note> +{{ data.rank }}<ion-icon name="thumbs-up-outline"></ion-icon></ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>Author</ion-label>
+      <ion-note>{{ data.author }}</ion-note>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon slot="start" name="business-outline"></ion-icon>
+      <ion-label>Publisher</ion-label>
+      <ion-note>{{ data.publisher }}</ion-note>
+    </ion-item>
+
+
+    
+    <ion-button mode="ios" expand="block" color="tertiary"> <ion-ripple-effect></ion-ripple-effect>
+    <a target="true" style="text-decoration: none !important; color:white" color="light" [href]="data.amazon_product_url">Open on Amazon</a></ion-button>
+     
+  </ion-list>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+
+    <ion-fab-button color="tertiary">
+      <ion-icon name="cart-outline"></ion-icon> 
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button color="danger" > <a target="true" [href]="data.buy_links[0].url"><ion-icon slot="icon-only" color="light" name="logo-amazon"></ion-icon></a></ion-fab-button>
+      <ion-fab-button color="danger" > <a target="true" [href]="data.buy_links[1].url"><ion-icon color="light" name="logo-apple"></ion-icon></a></ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger" > <a target="true" [href]="data.buy_links[2].url"><ion-icon color="light" name="bag"></ion-icon></a></ion-fab-button>
+      <ion-fab-button color="danger" > <a target="true" [href]="data.buy_links[3].url"><ion-icon color="light" name="bag"></ion-icon></a></ion-fab-button>
+      <ion-fab-button color="danger" > <a target="true" [href]="data.buy_links[4].url"><ion-icon color="light" name="bag"></ion-icon></a></ion-fab-button>
+      <ion-fab-button color="danger" > <a target="true" [href]="data.buy_links[5].url"><ion-icon color="light" name="bag"></ion-icon></a></ion-fab-button>   
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

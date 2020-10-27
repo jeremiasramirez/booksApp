@@ -1,0 +1,21 @@
+
+.containerPoster{
+    height: 300px !important;
+    width: 100% !important;
+    padding: 2px;
+}
+.containerPoster ion-img{
+    height: inherit !important;
+    border-radius: 5px !important;
+}
+
+
+.containerDescription{
+    margin: 10px 0;
+}
+.containerDescription p {
+    padding: 20px;
+    font-family:arial;
+    font-size: 18px;
+    line-height: 22px;
+}
