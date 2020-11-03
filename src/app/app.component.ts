@@ -16,11 +16,12 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+    this.statusBar.backgroundColorByName("blue")
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+       
       this.splashScreen.hide();
     });
   }

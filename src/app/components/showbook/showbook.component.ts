@@ -11,9 +11,7 @@ export class ShowbookComponent implements OnInit {
   @Input() private data :any = null;
   constructor(private modalclose:ModalController) { }
 
-  ngOnInit() {
-    console.log(this.data)
-  }
+  ngOnInit() { }
 
   private async back() : Promise<any>{
     this.modalclose.dismiss();

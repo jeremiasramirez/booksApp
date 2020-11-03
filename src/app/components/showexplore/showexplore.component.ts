@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
-import { timer } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 
 @Component({
   selector: 'app-showexplore',
@@ -13,21 +13,28 @@ export class ShowexploreComponent implements OnInit {
 
   private start:number=0;
   private end:number=20;
-
+  private timingRouter:any;
+  private timingMore:any;
   constructor(private routing:Router) { }
 
   ngOnInit() {}
-
+  ngOnDestroy(){
+    this.timingMore.unsubscribe();
+    this.timingRouter.unsubscribe();
+  }
   private more(event:any){
     
-    timer(500).subscribe(()=>{
+    this.timingMore =timer(500).subscribe(()=>{
       this.end+=10
       event.target.complete();
     })
 
   }
-  navigateTo(e:string){
-    this.routing.navigate(["/home/explore/",e])
+  private navigateTo(route:string){
+    this.timingRouter = timer(100).subscribe(()=>{
+      this.routing.navigate(["/home/explore/",route])
+    })
+
   }
 
 }
