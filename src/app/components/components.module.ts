@@ -6,6 +6,7 @@ import { SkeletonexploreComponent } from './skeletonexplore/skeletonexplore.comp
 import { ShowcardsComponent } from './showcards/showcards.component'
 import { SkeletoncardsComponent } from './skeletoncards/skeletoncards.component'
 import { ShowbookComponent } from './showbook/showbook.component'
+import { SearchPipe } from '../pipes/search.pipe'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ShowbookComponent } from './showbook/showbook.component'
         SkeletonexploreComponent,
         ShowcardsComponent,
         SkeletoncardsComponent,
-        ShowbookComponent
+        ShowbookComponent,
+        SearchPipe
     ],
     exports: [
         BookComponent,
@@ -26,7 +28,8 @@ import { ShowbookComponent } from './showbook/showbook.component'
         SkeletonexploreComponent,
         ShowcardsComponent,
         SkeletoncardsComponent,
-        ShowbookComponent
+        ShowbookComponent,
+        SearchPipe
     ]
 })
 

@@ -1,6 +1,5 @@
 <ion-list mode="ios" *ngIf="elements.length > 1">
-    
-  <ion-item class="animateIn" *ngFor="let explore of elements|slice:start:end" (click)="navigateTo(explore.list_name_encoded)" detail>
+  <ion-item class="animateIn" *ngFor="let explore of elements|slice:start:end | searchbook:elements:textInput " (click)="navigateTo(explore.list_name_encoded)" detail>
     <ion-icon slot="start" color='danger' name="ellipse-outline"></ion-icon>
     
     <ion-label>{{ explore.display_name }} <p>update {{ explore.updated }}</p></ion-label>

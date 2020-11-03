@@ -1,5 +1,10 @@
-
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <br>
+    <ion-searchbar [disabled]="!listAll.length" #inputvalue (ionChange)="searchOnExplore(inputvalue.value)" mode="ios" color="light" placeholder="Search categories" animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <app-showexplore [elements]="listAll"></app-showexplore>
+  <app-showexplore [textInput]="textInputValue" [elements]="listAll"></app-showexplore>
 
 </ion-content>

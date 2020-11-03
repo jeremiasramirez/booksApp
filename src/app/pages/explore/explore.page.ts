@@ -11,13 +11,16 @@ import { BookService } from 'src/app/services/service.book';
 })
 export class ExplorePage implements OnInit {
   private listAll: any[] = [];
- 
+  private textInputValue :string = '';
   constructor(private bookservice:BookService) { }
 
   ngOnInit() {
     this.getLists()
   }
 
+  private searchOnExplore(text){
+    this.textInputValue = text
+  }
   getLists() : void {
     this.bookservice.getByList().subscribe((e)=>{
       this.listAll = e.results;
